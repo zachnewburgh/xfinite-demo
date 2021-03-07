@@ -2,14 +2,19 @@ package main
 
 import "github.com/gin-gonic/gin"
 
-func main() {
+func setupRouter() *gin.Engine {
 	r := gin.Default()
-	r.GET("/", home)
+	r.GET("/", base)
 	r.GET("/ping", pong)
-	r.Run()
+	return r
 }
 
-func home(c *gin.Context) {
+func main() {
+	r := setupRouter()
+	r.Run(":8080")
+}
+
+func base(c *gin.Context) {
 	res := gin.H{"name": "xfinite-demo", "repository": "https://github.com/zachnewburgh/xfinite-demo/tree/main/go"}
 	c.JSON(200, res)
 }

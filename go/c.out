@@ -1,0 +1,5 @@
+mode: set
+xfinite-demo/main.go:5.32,10.2 4 1
+xfinite-demo/main.go:12.13,15.2 2 0
+xfinite-demo/main.go:17.27,20.2 2 1
+xfinite-demo/main.go:22.27,25.2 2 1

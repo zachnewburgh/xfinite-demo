@@ -17,6 +17,18 @@ Install from the [Go website](https://golang.org/).
 go run main.go
 ```
 
+### Run the Tests
+
+```bash
+go test -coverprofile=c.out
+```
+
+### Open Code Coverage Report
+
+```bash
+go tool cover -html=c.out
+```
+
 ## License
 
 "xfinite-demo - Go" is [ISC licensed](./LICENSE).
