@@ -28,7 +28,7 @@ export default () => {
         <TrafficLight active={light} lights={lights} />
       </section>
       <section className={styles.container}>
-        <Crosswalk active={crosswalk.active} />
+        <Crosswalk label={crosswalk.active} />
       </section>
     </div>
   );

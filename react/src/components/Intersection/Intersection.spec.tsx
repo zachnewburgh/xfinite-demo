@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import App from './App';
+import Intersection from './Intersection';
 
-describe('App', () => {
+describe('Intersection', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<App />);
+    const { baseElement } = render(<Intersection />);
     expect(baseElement).toBeTruthy();
   });
 });
