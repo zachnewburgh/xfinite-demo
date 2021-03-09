@@ -1,3 +1,7 @@
 # xfinite-demo
 
-This application is the React frontend of the xfinite-demo stack.
+This repository contains the example implementations [xfinite](https://www.npmjs.com/package/xfinite).
+
+## License
+
+"xfinite-demo" is [ISC licensed](./LICENSE).
