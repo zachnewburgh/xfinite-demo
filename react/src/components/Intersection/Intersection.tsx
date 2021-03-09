@@ -20,7 +20,7 @@ export default () => {
       setLight(active);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [trafficLight]);
 
   return (
     <div className={styles.intersection}>
