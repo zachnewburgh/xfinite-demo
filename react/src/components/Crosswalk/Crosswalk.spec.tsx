@@ -1,20 +1,21 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import Crosswalk from './Crosswalk';
+import { Crosswalk } from '../../constants';
+import Component, { Props } from './Crosswalk';
 
 describe('Crosswalk', () => {
-  let props;
+  let props: Props;
   beforeEach(() => {
     props = {
-      label: 'foo',
+      label: Crosswalk.Stop,
     };
   });
   it('should render successfully', () => {
-    const { baseElement } = render(<Crosswalk {...props} />);
+    const { baseElement } = render(<Component {...props} />);
     expect(baseElement).toBeTruthy();
   });
   it('should render the label', () => {
-    render(<Crosswalk {...props} />);
-    expect(screen.getByText('foo')).toBeTruthy();
+    render(<Component {...props} />);
+    expect(screen.getByText(Crosswalk.Stop)).toBeTruthy();
   });
 });

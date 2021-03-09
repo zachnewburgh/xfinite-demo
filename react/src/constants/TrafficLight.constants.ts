@@ -6,7 +6,5 @@ const slow = new State(LightColor.Yellow, [new Input(null, LightColor.Red)]);
 const go = new State(LightColor.Green, [new Input(null, LightColor.Yellow)]);
 const states = [stop, slow, go];
 
-const trafficLight = new Machine('trafficLight', states);
-trafficLight.build(stop.id);
-
+const trafficLight = new Machine<LightColor>(stop.id, states);
 export default trafficLight;

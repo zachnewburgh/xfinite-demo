@@ -10,7 +10,5 @@ const dontWalk = new State(Crosswalk.Stop, [
 ]);
 const states = [walk, dontWalk];
 
-const crosswalk = new Machine('crosswalk', states);
-crosswalk.build(dontWalk.id);
-
+const crosswalk = new Machine<Crosswalk>(dontWalk.id, states);
 export default crosswalk;

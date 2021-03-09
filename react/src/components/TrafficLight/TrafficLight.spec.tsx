@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import { LightColor } from '../../constants';
-import TrafficLight from './TrafficLight';
+import TrafficLight, { Props } from './TrafficLight';
 
 describe('TrafficLight', () => {
-  let props;
+  let props: Props;
   beforeEach(() => {
     props = {
       active: LightColor.Green,

@@ -1,8 +1,9 @@
 import React from 'react';
+import { Crosswalk } from '../../constants';
 import styles from './Crosswalk.module.scss';
 
-interface Props {
-  label: string;
+export interface Props {
+  label: Crosswalk;
 }
 
 export default ({ label }: Props) => (
