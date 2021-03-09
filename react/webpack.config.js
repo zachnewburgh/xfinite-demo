@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
+  devtool: 'inline-source-map',
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -15,13 +16,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx)?$/,
         loader: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         enforce: 'pre',
         test: /\.js$/,
-        loader: 'source-map-loader',
+        use: [
+          {
+            loader: 'source-map-loader',
+            options: {
+              filterSourceMappingUrl: (url, resourcePath) => {
+                if (/.*\/node_modules\/.*/.test(resourcePath)) {
+                  return false;
+                }
+                return true;
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.s[ac]ss$/,
