@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.css', '.scss'],
   },
   module: {
     rules: [
@@ -25,6 +25,7 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
+            // needed to chain sourcemaps.  see: https://webpack.js.org/loaders/source-map-loader/
             loader: 'source-map-loader',
             options: {
               filterSourceMappingUrl: (url, resourcePath) => {
@@ -38,21 +39,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.scss$/,
         use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
+          { loader: 'style-loader' },
+          { loader: 'css-modules-typescript-loader' },
+          { loader: 'css-loader', options: { modules: true } },
+          { loader: 'sass-loader' },
         ],
       },
     ],

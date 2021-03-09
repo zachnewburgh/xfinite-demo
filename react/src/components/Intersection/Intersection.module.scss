@@ -1,0 +1,18 @@
+.intersection {
+  display: flex;
+  height: 100%;
+
+  .container {
+    flex: 1;
+    display: flex;
+    padding: 0 12px;
+
+    &:first-of-type {
+      justify-content: flex-end;
+    }
+
+    &:last-of-type {
+      justify-content: flex-start;
+    }
+  }
+}

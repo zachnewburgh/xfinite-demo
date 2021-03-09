@@ -13,6 +13,7 @@
       "node_modules/@types"
     ],
     "types": [
+      "classnames",
       "jest",
       "react",
       "react-dom",
@@ -20,6 +21,6 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx",
-  ]
+    "src/**/*.tsx", "src/constants",
+  ],
 }

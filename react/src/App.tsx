@@ -1,6 +1,11 @@
 import React from 'react';
-import './App.module.scss';
+import styles from './App.module.scss';
+import { Intersection } from './components';
 
-const App = () => <h1>Hello World</h1>;
+const App = () => (
+  <div className={styles.app}>
+    <Intersection />
+  </div>
+);
 
 export default App;
