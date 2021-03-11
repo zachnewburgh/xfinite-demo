@@ -7,10 +7,11 @@
     "node": "14.16.0"
   },
   "scripts": {
-    "start": "webpack serve --mode=development --port=4200 --hot",
-    "build": "webpack --mode=production && mv build ../build",
+    "start": "webpack serve --port $PORT || 8080",
+    "build": "webpack --mode=production",
     "test": "jest --coverage",
-    "add-coverage-badges": "istanbul-badges-readme"
+    "add-coverage-badges": "istanbul-badges-readme",
+    "heroku-prebuild": "npm install --dev && echo 'done'"
   },
   "author": "Zach Newburgh",
   "license": "ISC",

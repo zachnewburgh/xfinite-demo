@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './App.module.scss';
+import './App.css';
 import { Intersection } from './components';
 
 const App = () => (
-  <div className={styles.app}>
+  <div className='app'>
     <Intersection />
   </div>
 );

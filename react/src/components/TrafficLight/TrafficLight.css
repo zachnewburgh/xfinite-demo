@@ -1,0 +1,27 @@
+.trafficLight {
+  background-color: orange;
+  max-width: 225px;
+  position: relative;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.lightsContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.light {
+  height: 30%;
+  width: 95%;
+  border-radius: 100px;
+  opacity: 0.25;
+}
+
+.active {
+  opacity: 1;
+}

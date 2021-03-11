@@ -3,7 +3,7 @@ import { IState } from 'xfinite';
 import { crosswalk, LightColor, trafficLight } from '../../constants';
 import { Crosswalk } from '../Crosswalk';
 import { TrafficLight } from '../TrafficLight';
-import styles from './Intersection.module.scss';
+import './Intersection.css';
 
 export default () => {
   const [light, setLight] = useState<LightColor>(trafficLight.active);
@@ -23,11 +23,11 @@ export default () => {
   }, [trafficLight]);
 
   return (
-    <div className={styles.intersection}>
-      <section className={styles.container}>
+    <div className='intersection'>
+      <section className='container'>
         <TrafficLight active={light} lights={lights} />
       </section>
-      <section className={styles.container}>
+      <section className='container'>
         <Crosswalk label={crosswalk.active} />
       </section>
     </div>

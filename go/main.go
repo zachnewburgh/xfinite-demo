@@ -1,6 +1,11 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"os"
+
+	"github.com/gin-gonic/gin"
+)
 
 func setupRouter() *gin.Engine {
 	r := gin.Default()
@@ -11,7 +16,11 @@ func setupRouter() *gin.Engine {
 
 func main() {
 	r := setupRouter()
-	r.Run(":8080")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	r.Run(fmt.Sprintf(":%s", port))
 }
 
 func base(c *gin.Context) {

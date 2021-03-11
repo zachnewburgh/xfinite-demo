@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import { LightColor } from '../../constants';
-import styles from './TrafficLight.module.scss';
+import './TrafficLight.css';
 
 export interface Props {
   active: LightColor;
@@ -10,8 +10,8 @@ export interface Props {
 
 export default ({ active, lights }: Props) => {
   const lightsEl = lights.map((light: LightColor) => {
-    const className = classnames(styles.light, {
-      [styles.active]: active === light,
+    const className = classnames('light', {
+      active: active === light,
     });
     return (
       <div
@@ -23,8 +23,8 @@ export default ({ active, lights }: Props) => {
   });
 
   return (
-    <section className={styles.trafficLight}>
-      <div className={styles.lightsContainer}>{lightsEl}</div>
+    <section className='trafficLight'>
+      <div className='lightsContainer'>{lightsEl}</div>
     </section>
   );
 };

@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'inline-source-map',
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: `${__dirname}/dist`,
     filename: 'bundle.js',
   },
   resolve: {
@@ -39,13 +39,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-modules-typescript-loader' },
-          { loader: 'css-loader', options: { modules: true } },
-          { loader: 'sass-loader' },
-        ],
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
