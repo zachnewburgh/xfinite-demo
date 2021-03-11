@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This application is the React frontend of the xfinite-demo stack",
   "main": "index.js",
+  "engines": {
+    "node": "14.16.0"
+  },
   "scripts": {
     "start": "webpack serve --mode=development --port=4200 --hot",
     "build": "webpack --mode=production && mv build ../build",
